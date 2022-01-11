@@ -1,0 +1,84 @@
+<h1>Directives</h1>
+<hr>
+<div *ngIf="age >= 18">
+  <p>Eligible to vote...</p>
+</div>
+
+<hr>
+<div *ngIf="age >= 18;else elseTemplate">
+  <p>Eligible to vote...</p>
+</div>
+<ng-template #elseTemplate>
+  <p>Not Eligible to vote...</p>
+</ng-template>
+<hr>
+<div [ngSwitch]="bankName">
+  <div *ngSwitchCase="'HDFC'">
+    <h3>{{bankName}} offers</h3>
+    <ul>
+      <li>offer 1</li>
+      <li>offer 2</li>
+      <li>offer 3</li>
+      <li>offer 4</li>
+    </ul>  
+  </div>
+  <div *ngSwitchCase="'AXIS'">
+    <h3>{{bankName}} offers</h3>
+    <ul>
+      <li>offer 1</li>
+      <li>offer 2</li>
+      <li>offer 3</li>
+    </ul>  
+  </div>
+ 
+  <div *ngSwitchDefault>
+    <h3>Other bank offers</h3>
+    <ul>
+      <li>offer 1</li>
+      <li>offer 2</li>
+    </ul>
+  </div>
+</div>>
+<hr>
+<h1>Drop down List</h1>
+Select Your Bank
+<select [(ngModel)] = "bankName">
+  <option value="HDFC">HDFC</option>
+  <option value="IDFC">IDFC</option>
+  <option value="SBI">SBI</option>
+  <option value="Others">Others</option>
+</select>
+
+<div [ngSwitch]="bankName">
+  <div *ngSwitchCase="'HDFC'">
+    <h3>{{bankName}} offers</h3>
+    <ul>
+      <li>offer 1</li>
+      <li>offer 2</li>
+      <li>offer 3</li>
+      <li>offer 4</li>
+    </ul>  
+  </div>
+  <div *ngSwitchCase="'IDFC'">
+    <h3>{{bankName}} offers</h3>
+    <ul>
+      <li>offer 1</li>
+      <li>offer 2</li>
+      <li>offer 3</li>
+    </ul>  
+  </div>
+ 
+  <div *ngSwitchDefault>
+    <h3>Other bank offers</h3>
+    <ul>
+      <li>offer 1</li>
+      <li>offer 2</li>
+    </ul>
+  </div>
+</div>>
+<hr>
+<ul>
+  <li *ngFor="let name of nameList">
+      {{name}}
+  </li>
+</ul>
